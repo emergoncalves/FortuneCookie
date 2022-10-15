@@ -18,3 +18,7 @@ Caso o projeto não inicie utilize o comando abaixo:
 ```
 npx react-native start
 ```
+
+https://user-images.githubusercontent.com/58090791/196008882-1e35ed9b-8f5f-4471-89f4-be81154fafd8.mp4
+
+
