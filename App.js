@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, StyleSheet, Image, Text} from "react-native"
+import { View, TouchableOpacity, StyleSheet, Image, Text } from "react-native"
 
 
-function App(){
+function App() {
 
   const [image, setImage] = useState(require('./src/images/biscoito.png'));
   const [quote, setQuote] = useState('');
@@ -38,38 +38,38 @@ function App(){
 
   ]
 
-  function generateQuote(){
-    let quoteRandom = Math.floor(Math.random() * quotes.length); 
+  function generateQuote() {
+    let quoteRandom = Math.floor(Math.random() * quotes.length);
     setQuote('"' + quotes[quoteRandom] + '"');
     setImage(require('./src/images/biscoitoAberto.png'))
   }
 
-  function reset(){
+  function reset() {
     setQuote("");
     setImage(require('./src/images/biscoito.png'))
   }
 
-  return(
+  return (
     <View style={styles.container}>
       <Image source={image} style={styles.image}></Image>
       <Text style={styles.quote}>{quote}</Text>
-      
+
       <TouchableOpacity style={styles.buttonArea} onPress={generateQuote}>
-      { quote.length === 0 ?
+        {quote.length === 0 ?
           <View style={styles.button}>
             <Text style={styles.buttonText}>Abrir biscoito</Text>
           </View>
-        : ''
-      }
+          : ''
+        }
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.buttonArea} onPress={reset}>
-      { quote.length != 0 ?
-        <View style={[styles.button, {backgroundColor: '#d99b53'}]}>
-          <Text style={[styles.buttonText, {color: '#866052'}]}>Novo biscoito</Text>
-        </View>
-        : ''
-      }
+        {quote.length != 0 ?
+          <View style={[styles.button, { backgroundColor: '#d99b53' }]}>
+            <Text style={[styles.buttonText, { color: '#866052' }]}>Novo biscoito</Text>
+          </View>
+          : ''
+        }
       </TouchableOpacity>
     </View>
   );
